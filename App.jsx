@@ -1,25 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/landing/Navbar';
-import Hero from './components/landing/Hero';
-import Features from './components/landing/Features';
-import HowItWorks from './components/landing/HowItWorks';
-import Testimonials from './components/landing/Testimonials';
-import Footer from './components/landing/Footer';
+import LandingPage from './components/landing/LandingPage';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
-
-// Landing Page Component
-const LandingPage = () => (
-  <>
-    <Navbar />
-    <Hero />
-    <Features />
-    <HowItWorks />
-    <Testimonials />
-    <Footer />
-  </>
-);
+import AdminDashboard from './components/admin/AdminDashboard';
+import ProtectedRoute from './components/common/ProtectedRoute';
 
 function App() {
   return (
@@ -28,6 +13,15 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        
+        <Route 
+          path="/admin/dashboard" 
+          element={
+            <ProtectedRoute allowedRoles={['admin']}>
+              <AdminDashboard />
+            </ProtectedRoute>
+          } 
+        />
       </Routes>
     </Router>
   );
