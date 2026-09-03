@@ -6,7 +6,6 @@ import PostJob from './PostJob';
 import ApplicationsReceived from './ApplicationsReceived';
 
 const EmployerDashboard = () => {
-  // Mock stats
   const [stats] = useState({
     totalJobs: 5,
     totalApplications: 25,
@@ -36,11 +35,6 @@ const EmployerDashboard = () => {
 
         {/* Stats Cards */}
         <EmployerStats stats={stats} />
-
-        {/* Recent Applications Preview */}
-        <div className="mt-8">
-          <ApplicationsReceived />
-        </div>
 
         {/* Quick Actions */}
         <div className="grid md:grid-cols-3 gap-6 mt-8">
