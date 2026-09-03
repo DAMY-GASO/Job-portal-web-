@@ -55,17 +55,16 @@ const EmployerStats = ({ stats }) => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {cards.map((card, index) => (
         <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-4">
             <div className={`p-3 rounded-full ${colorClasses[card.color]}`}>
               {card.icon}
             </div>
-          </div>
-          
-          <div className="space-y-1">
-            <p className="text-sm text-gray-500">{card.label}</p>
-            <p className="text-2xl font-bold text-damy-primary">
-              {card.isCurrency ? `TSh ${card.value.toLocaleString()}` : card.value.toLocaleString()}
-            </p>
+            <div className="flex-1">
+              <p className="text-sm text-gray-500">{card.label}</p>
+              <p className="text-2xl font-bold text-damy-primary">
+                {card.isCurrency ? `TSh ${card.value.toLocaleString()}` : card.value.toLocaleString()}
+              </p>
+            </div>
           </div>
         </div>
       ))}
