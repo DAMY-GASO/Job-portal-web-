@@ -21,13 +21,13 @@ const MyJobs = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    // Mock data - hii itabadilishwa na API baadae
+    // Mock data
     const mockJobs = [
       {
         id: 1,
         title: 'Software Engineer',
         category: 'Technology',
-        type: 'full-time',
+        type: 'Full-time',
         location: 'Dar es Salaam',
         salary_min: 1500000,
         salary_max: 2500000,
@@ -42,7 +42,7 @@ const MyJobs = () => {
         id: 2,
         title: 'Accountant',
         category: 'Finance',
-        type: 'full-time',
+        type: 'Full-time',
         location: 'Arusha',
         salary_min: 800000,
         salary_max: 1200000,
@@ -57,7 +57,7 @@ const MyJobs = () => {
         id: 3,
         title: 'Sales Manager',
         category: 'Sales',
-        type: 'full-time',
+        type: 'Full-time',
         location: 'Mwanza',
         salary_min: 1000000,
         salary_max: 1800000,
@@ -72,7 +72,7 @@ const MyJobs = () => {
         id: 4,
         title: 'Marketing Specialist',
         category: 'Marketing',
-        type: 'contract',
+        type: 'Contract',
         location: 'Dar es Salaam',
         salary_min: 600000,
         salary_max: 1000000,
@@ -87,7 +87,7 @@ const MyJobs = () => {
         id: 5,
         title: 'Web Developer',
         category: 'Technology',
-        type: 'remote',
+        type: 'Remote',
         location: 'Remote',
         salary_min: 1200000,
         salary_max: 2000000,
@@ -155,12 +155,12 @@ const MyJobs = () => {
           />
         </div>
         
-        <div className="flex gap-2">
+        <div className="flex gap-2 overflow-x-auto pb-2">
           {['all', 'pending', 'approved', 'rejected', 'expired'].map((status) => (
             <button
               key={status}
               onClick={() => setFilter(status)}
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
                 filter === status
                   ? 'bg-damy-accent text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
