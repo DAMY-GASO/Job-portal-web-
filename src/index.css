@@ -1,9 +1,10 @@
+/* Google Font - LAZIMA IWE MWANZO! */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Tailwind directives - ZINAFUATA BAADAE */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 /* Custom Root Variables */
 :root {
